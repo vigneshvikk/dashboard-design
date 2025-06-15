@@ -1,38 +1,37 @@
-.App {
-  text-align: center;
+.transition {
+  transition: all 3s ease, transform 3s ease;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.transition-active {
+  transform: scale(1.1); /* slight zoom-in effect */
+  background-color: #ffc107cc; /* slightly transparent warning to give active feedback */
+}
+/* Base styling */
+.scroll-container {
+  max-width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  white-space: nowrap;
+  scrollbar-width: thin; /* Firefox */
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+/* Small devices (≥576px) */
+@media (min-width: 576px) {
+  .scroll-container {
+    max-width: 100px;
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+/* Medium devices (≥768px) */
+@media (min-width: 768px) {
+  .scroll-container {
+    max-width: 400px;
   }
-  to {
-    transform: rotate(360deg);
+}
+
+/* Large devices (≥992px) */
+@media (min-width: 992px) {
+  .scroll-container {
+    max-width: 600px;
   }
 }
