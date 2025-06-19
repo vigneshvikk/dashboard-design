@@ -1,0 +1,52 @@
+import React from "react";
+
+const doctors = [
+  {
+    name: "Dr. Aisha Khan",
+    qualification: "MBBS, MD (Cardiology)",
+    location: "Chennai, India",
+    image: "https://via.placeholder.com/60",
+  },
+  {
+    name: "Dr. Rahul Mehta",
+    qualification: "MBBS, MS (Orthopedics)",
+    location: "Mumbai, India",
+    image: "https://via.placeholder.com/60",
+  },
+  {
+    name: "Dr. Neha Patel",
+    qualification: "BDS, MDS (Pediatric Dentistry)",
+    location: "Ahmedabad, India",
+    image: "https://via.placeholder.com/60",
+  },
+];
+
+function ProfessionsList() {
+  return (
+    <div>
+      {doctors.map((doctor, index) => (
+        <div key={index} className="d-flex align-items-center mb-3">
+          <div
+            className="me-3 bg-warning d-flex justify-content-center align-items-center rounded"
+            style={{ width: "80px", height: "80px" }}
+          >
+            <img
+              src={doctor.image}
+              alt={doctor.name}
+              width="70"
+              height="70"
+              style={{ objectFit: "cover", borderRadius: "0.5rem" }}
+            />
+          </div>
+          <div>
+            <h6 className="mb-1">{doctor.name}</h6>
+            <small className="d-block text-muted">{doctor.qualification}</small>
+            <small className="text-muted">{doctor.location}</small>
+          </div>
+        </div>
+      ))}
+    </div>
+  );
+}
+
+export default ProfessionsList;
